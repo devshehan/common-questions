@@ -4,6 +4,10 @@ import java.util.Map;
 
 public class Main {
     public static void main(String[] args) {
+
+    }
+
+    public static void arrayStringQuestions(){
         String userName = "Shehaan";
         reverseString(userName);
         calculateConstantsAndVowelsInString(userName);
