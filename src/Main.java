@@ -5,6 +5,41 @@ import java.util.Map;
 public class Main {
     public static void main(String[] args) {
 
+        createBinaryTree();
+    }
+
+    public static void createBinaryTree(){
+
+        Node root = new Node(3);
+        root.left = new Node(10);
+        root.right = new Node(7);
+        root.left.left =  new Node(4);
+        root.right.right = new Node(23);
+
+        //print in order Binary Tree
+        System.out.println("Inorder: ");
+        inOrder(root);
+        System.out.println("\nCount leaf Nodes: " + countLeafNodes(root));
+    }
+
+    public static void inOrder(Node node){
+        if(node == null){
+            return;
+        }
+        inOrder(node.left);
+        System.out.print(" " + node.key);
+        inOrder(node.right);
+    }
+
+    public static int countLeafNodes(Node node){
+        if(node == null){
+            return 0;
+        }
+
+        if(node.left == null && node.right == null){
+            return 1;
+        }
+        return countLeafNodes(node.left) + countLeafNodes(node.right);
     }
 
     public static void arrayStringQuestions(){
@@ -27,7 +62,6 @@ public class Main {
         findLargestAndShortestNumberInTheArray();
         findPairNumbersThatAddUptoSpecificSum();
     }
-
     public static void reverseString(String username){
         System.out.println("String : " + username);
 
